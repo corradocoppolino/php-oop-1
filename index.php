@@ -3,8 +3,10 @@
 require_once __DIR__ ."/Film.php";
 
 $film1 = new Film("Star Wars The Phantom Menace","fantastico",180);
+$film2 = new Film('Joker','drammatico',200);
 
-$film2 = new Film('Joker'.'drammatico',1000);
+$film1->setPrezzo(10);
+$film2->setPrezzo(8.5);
 
 ?>
 
@@ -20,10 +22,23 @@ $film2 = new Film('Joker'.'drammatico',1000);
 
 <body>
     <h3> 
-    TITOLO : <?php echo $film1->titolo ?>
-    GENERE : <?php echo $film1->genere ?> 
-    DURATA : <?php echo $film1->durata ?>
+    TITOLO : <?php echo $film1->titolo ?> <br>
+    GENERE : <?php echo $film1->genere ?> <br>
+    DURATA : <?php echo $film1->durata ?> <br>
+    PREZZO : <?php echo $film1->getPrezzo() ?>
     </h3>
+
+    <h3> 
+    TITOLO : <?php echo $film2->titolo ?> <br>
+    GENERE : <?php echo $film2->genere ?> <br>
+    DURATA : <?php echo $film2->durata ?> <br>
+    PREZZO : <?php echo $film1->getPrezzo() ?>
+    </h3>
+
+    <h3>
+    Ho creato : <?php echo Film::getContatore() ?> istanze
+    </h3>
+
 </body>
 
 </html>
